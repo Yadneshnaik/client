@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-const About = () => (
+const About = () => {
+  const [aboutData, setAboutData] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:5000/api/about')
+      .then((response) => {
+        setAboutData(response.data); // Save the fetched data to state
+      })
+      .catch((error) => {
+        console.error('Error fetching about data:', error);
+      });
+  }, []);
+
+  if (!aboutData) {
+    return <div>Loading...</div>; // Display loading message while fetching
+  }
+
+  return (
     <div className="container">
-        <h1>About Us</h1>
-        <p>We are an IT company specializing in web development, digital marketing, and more.</p>
+      <h1>{aboutData.title}</h1>
+      <p>{aboutData.description}</p>
     </div>
-);
+  );
+};
 
 export default About;
