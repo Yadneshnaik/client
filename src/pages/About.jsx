@@ -6,7 +6,7 @@ const About = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/about')
+      .get('https://server-dl1g.onrender.com/api/about')
       .then((response) => {
         setAboutData(response.data); // Save the fetched data to state
       })

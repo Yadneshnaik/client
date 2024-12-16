@@ -7,7 +7,7 @@ const WebDevelopmentPlans = () => {
     useEffect(() => {
         // Fetch Web Development Plans from the backend API
         axios
-            .get('http://localhost:5000/api/web-development-plan')
+            .get('https://server-dl1g.onrender.com/api/web-development-plan')
             .then((response) => {
                 setPlans(response.data);
             })

@@ -7,7 +7,7 @@ const Team = () => {
     useEffect(() => {
         // Fetch team members from the backend API
         axios
-            .get('http://localhost:5000/api/team')
+            .get('https://server-dl1g.onrender.com/api/team')
             .then((response) => {
                 setTeamMembers(response.data);
             })
