@@ -25,7 +25,7 @@ const Booking = () => {
         setError('');
 
         try {
-            const response = await axios.post('http://localhost:5000/api/bookings', formData);
+            const response = await axios.post('https://server-dl1g.onrender.com/api/bookings', formData);
             setMessage(response.data.message);
             setFormData({
                 name: '',
