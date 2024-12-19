@@ -10,12 +10,14 @@ const Services = () => {
         axios
             .get('https://server-dl1g.onrender.com/api/services')
             .then((response) => setServices(response.data))
-            .catch((error) => console.log(error));
+            .catch((error) => console.error(error));
     }, []);
 
     const handleRedirect = (serviceTitle) => {
         if (serviceTitle.toLowerCase() === 'web development') {
             navigate('/web-development-plan'); // Redirect to Web Development Plan page
+        } else if (serviceTitle.toLowerCase() === 'it consultancy') {
+            navigate('/it-consultancy-booking'); // Redirect to IT Consultancy Booking page
         } else {
             navigate('/contact'); // Redirect to Contact page
         }

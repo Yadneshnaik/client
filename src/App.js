@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import BookingSlot from './pages/BookingSlot';
 import WebDevelopmentPlans from './pages/WebDevelopmentPlans';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
@@ -18,6 +19,7 @@ const App = () => (
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/web-development-plan" element={<WebDevelopmentPlans />} />
+                <Route path="/it-consultancy-booking" element={<BookingSlot />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/team" element={<Team />} />
             </Routes>
