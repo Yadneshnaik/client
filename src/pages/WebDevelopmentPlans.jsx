@@ -16,7 +16,7 @@ const WebDevelopmentPlans = () => {
                 setPlans(response.data);
             })
             .catch((error) => {
-                console.log('Error fetching Web Development Plans:', error);
+                console.error('Error fetching Web Development Plans:', error);
             });
     }, []);
 
@@ -39,13 +39,13 @@ const WebDevelopmentPlans = () => {
                 email: formData.email,
                 selectedPlan: selectedPlan.title,
             })
-            .then((response) => {
+            .then(() => {
                 setMessage('Booking successful!');
                 setShowModal(false);
                 setFormData({ name: '', email: '' });
             })
             .catch((error) => {
-                console.log('Error booking the plan:', error);
+                console.error('Error booking the plan:', error);
                 setMessage('An error occurred. Please try again.');
             });
     };
