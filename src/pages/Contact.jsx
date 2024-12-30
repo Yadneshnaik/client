@@ -18,7 +18,7 @@ const Contact = () => {
 
     return (
         <div className="container">
-            <h1>Contact Us</h1>
+            <h1 className="text-center my-4">Contact Us</h1>
             {message && <p>{message}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">

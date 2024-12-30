@@ -30,8 +30,8 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/about" onClick={handleToggle}>
-                            About Us
+                        <Link className="nav-link" to="/story" onClick={handleToggle}>
+                            Our Story
                         </Link>
                     </li>
                     <li className="nav-item">

@@ -21,8 +21,8 @@ const About = () => {
 
   return (
     <div className="container">
-      <h1>{aboutData.title}</h1>
-      <p>{aboutData.description}</p>
+      <h1 className="text-center my-4">{aboutData.title}</h1>
+      <p >{aboutData.description}</p>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Team = () => {
 
     return (
         <div className="container">
-            <h1>Our Team</h1>
+            <h1 className="text-center my-4">Our Team</h1>
             <div className="row">
                 {teamMembers.map((member) => (
                     <div key={member._id} className="col-md-4 mb-4">
