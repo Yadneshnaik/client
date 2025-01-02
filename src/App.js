@@ -9,10 +9,12 @@ import BookingSlot from './pages/BookingSlot';
 import WebDevelopmentPlans from './pages/WebDevelopmentPlans';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
+import OfferBanner from './pages/OfferBanner';
 
 const App = () => (
     <Router>
         <Header />
+        <OfferBanner />
         <main>
             <Routes>
                 <Route path="/" element={<Home />} />
