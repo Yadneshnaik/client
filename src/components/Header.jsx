@@ -45,11 +45,6 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/career" onClick={handleToggle}>
-                            Career
-                        </Link>
-                    </li>
-                    <li className="nav-item">
                         <Link className="nav-link" to="/contact" onClick={handleToggle}>
                             Contact Us
                         </Link>

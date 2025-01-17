@@ -9,7 +9,6 @@ import BookingSlot from './pages/BookingSlot';
 import WebDevelopmentPlans from './pages/WebDevelopmentPlans';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
-import CareerPage from './pages/CareerPage';
 
 const App = () => (
     <Router>
@@ -22,7 +21,6 @@ const App = () => (
                 <Route path="/web-development-plan" element={<WebDevelopmentPlans />} />
                 <Route path="/it-consultancy-booking" element={<BookingSlot />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/career" element={<CareerPage />} />
                 <Route path="/team" element={<Team />} />
             </Routes>
         </main>
