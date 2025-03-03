@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-light text-dark text-center py-3"
+      className="bg-light text-dark text-center py-1"
       style={{
         position: "fixed",
         bottom: "0",
