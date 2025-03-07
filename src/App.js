@@ -10,22 +10,26 @@ import WebDevelopmentPlans from './pages/WebDevelopmentPlans';
 import Contact from './pages/Contact';
 import Team from './pages/Team';
 
+
 const App = () => (
-    <Router>
-        <Header />
-        <main>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path='/story' element={<Story />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/web-development-plan" element={<WebDevelopmentPlans />} />
-                <Route path="/it-consultancy-booking" element={<BookingSlot />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/team" element={<Team />} />
-            </Routes>
-        </main>
-        <Footer />
-    </Router>
+    <>
+        <SpeedInsights />
+        <Router>
+            <Header />
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path='/story' element={<Story />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/web-development-plan" element={<WebDevelopmentPlans />} />
+                    <Route path="/it-consultancy-booking" element={<BookingSlot />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/team" element={<Team />} />
+                </Routes>
+            </main>
+            <Footer />
+        </Router>
+    </>
 );
 
 export default App;
