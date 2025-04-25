@@ -7,7 +7,6 @@ const WebDevelopmentPlans = () => {
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({ name: '', email: '' });
     const [message, setMessage] = useState('');
-    const [messageType, setMessageType] = useState(''); // 'success' or 'error'
 
     // Fetch Web Development Plans from the backend API
     useEffect(() => {
@@ -31,7 +30,6 @@ const WebDevelopmentPlans = () => {
     const handleBooking = () => {
         if (!formData.name || !formData.email) {
             setMessage('Please fill out all fields.');
-            setMessageType('error');
             return;
         }
 
@@ -41,35 +39,20 @@ const WebDevelopmentPlans = () => {
                 email: formData.email,
                 selectedPlan: selectedPlan.title,
             })
-            .then((res) => {
-                setMessage('Booking successful! A confirmation email has been sent.');
-                setMessageType('success');
+            .then(() => {
+                setMessage('Booking successful!');
                 setShowModal(false);
                 setFormData({ name: '', email: '' });
-
-                // Automatically clear the message after a few seconds
-                setTimeout(() => setMessage(''), 5000);
             })
             .catch((error) => {
                 console.error('Error booking the plan:', error);
                 setMessage('An error occurred. Please try again.');
-                setMessageType('error');
             });
     };
 
     return (
-        <div className="container py-5">
+        <div className="container">
             <h1 className="my-4 text-center">Our Web Development Plans</h1>
-
-            {message && (
-                <div
-                    className={`alert ${messageType === 'success' ? 'alert-success' : 'alert-danger'}`}
-                    role="alert"
-                >
-                    {message}
-                </div>
-            )}
-
             <div className="row">
                 {plans.map((plan) => (
                     <div key={plan._id} className="col-md-4 mb-4">
@@ -95,7 +78,6 @@ const WebDevelopmentPlans = () => {
                                     onClick={() => {
                                         setSelectedPlan(plan);
                                         setShowModal(true);
-                                        setMessage('');
                                     }}
                                 >
                                     Book This Plan
@@ -108,11 +90,7 @@ const WebDevelopmentPlans = () => {
 
             {/* Booking Modal */}
             {showModal && (
-                <div
-                    className="modal show d-block"
-                    tabIndex="-1"
-                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
-                >
+                <div className="modal show d-block" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -140,6 +118,7 @@ const WebDevelopmentPlans = () => {
                                         onChange={handleInputChange}
                                     />
                                 </div>
+                                {message && <p className="text-danger">{message}</p>}
                             </div>
                             <div className="modal-footer">
                                 <button className="btn btn-secondary" onClick={() => setShowModal(false)}>
